@@ -1,0 +1,36 @@
+# Initialize a dictionary to store device information
+deviceDatabase = {
+    "device1": {
+        "name": "Example Device 1",
+        "brand": "Sample Brand 1",
+        "model": "Model ABC",
+        "imageUrl": "example-image1.jpg"
+    },
+    "device2": {
+        "name": "Example Device 2",
+        "brand": "Sample Brand 2",
+        "model": "Model XYZ",
+        "imageUrl": "example-image2.jpg"
+    },
+    # Add more devices as needed
+}
+
+# Function to look up a device by name in the database
+def lookupDevice(deviceName):
+    if deviceName in deviceDatabase:
+        return deviceDatabase[deviceName]
+    else:
+        return None  # Return None if the device is not found
+
+# Example usage:
+deviceName = "device1"  # Replace with the user's input
+deviceData = lookupDevice(deviceName)
+
+if deviceData:
+    print("Device found:")
+    print("Name:", deviceData["name"])
+    print("Brand:", deviceData["brand"])
+    print("Model:", deviceData["model"])
+    print("Image URL:", deviceData["imageUrl"])
+else:
+    print("Device not found in the database.")

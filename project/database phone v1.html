@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Lookup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #device-image {
+            max-width: 100%;
+            display: none;
+            margin: 20px 0;
+        }
+        #device-specs {
+            text-align: left;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Device Lookup</h1>
+        <input type="text" id="device-name" placeholder="Enter Device Name">
+        <button onclick="lookupDevice()">Lookup</button>
+        <div id="device-image">
+            <!-- Display device image here -->
+            <img src="" alt="Device Image">
+        </div>
+        <div id="device-specs">
+            <!-- Display device specifications here -->
+            <h2>Device Specifications</h2>
+            <ul>
+                <li><strong>Name:</strong> <span id="device-name-spec"></span></li>
+                <li><strong>Brand:</strong> <span id="device-brand-spec"></span></li>
+                <li><strong>Model:</strong> <span id="device-model-spec"></span></li>
+                <!-- Add more specifications as needed -->
+            </ul>
+        </div>
+    </div>
+    <script>
+        function lookupDevice() {
+            // Get the input value (device name)
+            var deviceName = document.getElementById("device-name").value;
+
+            // Simulate data (you would fetch this from a database)
+            var deviceData = {
+                name: "Example Device",
+                brand: "Sample Brand",
+                model: "Model XYZ",
+                // Add more data as needed
+                imageUrl: "example-image.jpg" // Path to the device image
+            };
+
+            // Update the displayed information
+            document.getElementById("device-name-spec").textContent = deviceData.name;
+            document.getElementById("device-brand-spec").textContent = deviceData.brand;
+            document.getElementById("device-model-spec").textContent = deviceData.model;
+            document.getElementById("device-image").style.display = "block";
+            document.getElementById("device-specs").style.display = "block";
+            document.querySelector("#device-image img").src = deviceData.imageUrl;
+        }
+    </script>
+</body>
+</html>

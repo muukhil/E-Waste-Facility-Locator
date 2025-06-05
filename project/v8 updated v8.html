@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        /* Your existing CSS styles go here */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #696969;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="driverdetails.html">Driver Login</a>
+        <a href="e-commerce.html">E-Commerce</a>
+        <a href="complaints.html">Complaints</a>
+	<a href="database_phone_v4.html">Device Information</a>
+	<a href="e-waste.html">E-Waste Management</a>
+
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Our E-Waste Awareness Page</h1>
+        <p>In today's digital age, electronic devices have become an essential part of our lives. However, their rapid advancement has given rise to a pressing concern - electronic waste, or E-Waste. E-Waste is one of the fastest-growing waste streams globally, with technology constantly evolving and shorter product lifecycles leading to an alarming rate of device discards.</p>
+
+        <p>Many electronic devices contain hazardous materials such as lead, mercury, cadmium, and brominated flame retardants. When not properly disposed of, these toxins can leach into the soil and water, posing serious health risks. Additionally, improper disposal can lead to data breaches and privacy issues, making it essential to ensure proper data erasure or destruction.</p>
+
+        <p>Beyond the environmental and health concerns, there are broader implications. Electronics contain valuable resources like precious metals and rare earth elements. Recycling E-Waste not only prevents environmental harm but also conserves these resources, reducing the need for new mining and extraction. Moreover, recycling E-Waste consumes less energy compared to mining and processing raw materials for new electronic devices, contributing to energy savings and combating climate change.</p>
+
+        <p>As consumers, we play a vital role in reducing E-Waste. Repairing and extending the lifespan of our devices through maintenance and upgrades is a responsible choice. Many communities and organizations offer E-Waste recycling programs, providing accessible means to dispose of electronic devices responsibly.</p>
+
+        <p>Furthermore, legislation and regulations regarding E-Waste management are being implemented in many countries. Staying informed about these regulations is crucial for individuals and businesses alike. Educational initiatives and global collaboration efforts are also essential to empower individuals and communities to make more sustainable choices and address E-Waste as the global issue it is.</p>
+
+        <p>Advocating for responsible product design, supporting the second-hand electronics market, and encouraging corporate responsibility are all steps towards a more sustainable future. By raising awareness about these aspects of E-Waste and collectively working together, we can minimize its negative impact on the environment, human health, and future generations.</p>
+    </div>
+
+    <!-- Image slideshow container -->
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="mySlides">
+            <img src="image1.jpg" alt="Slide 1">
+        </div>
+
+        <div class="mySlides">
+            <img src="image2.jpg" alt="Slide 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="image3.jpg" alt="Slide 3">
+        </div>
+
+        <!-- JavaScript for image slideshow -->
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let slides = document.getElementsByClassName("mySlides");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

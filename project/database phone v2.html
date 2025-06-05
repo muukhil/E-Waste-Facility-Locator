@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #device-details {
+            text-align: left;
+            display: none;
+        }
+        #device-image {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Device Information</h1>
+        <select id="device-select">
+            <option value="">Select a Device</option>
+            <!-- Dynamically populate options using JavaScript -->
+        </select>
+        <div id="device-details">
+            <h2>Device Details</h2>
+            <ul>
+                <li><strong>Name:</strong> <span id="device-name"></span></li>
+                <li><strong>Brand:</strong> <span id="device-brand"></span></li>
+                <li><strong>Model:</strong> <span id="device-model"></span></li>
+                <li><strong>Minerals:</strong> <span id="device-minerals"></span></li>
+                <!-- Add more device details here as needed -->
+            </ul>
+            <div id="device-image">
+                <img src="" alt="Device Image">
+            </div>
+        </div>
+    </div>
+    <script>
+        // Sample database of devices (phones)
+        var phones = [
+            {
+                name: "Samsung Galaxy J5",
+                brand: "Samsung",
+                model: "J series",
+                minerals: ["Gold - 10%", "Silicon - 24%", "Barilium - 5%","Plastic - 22%","Lead - 6%","Zinc - 2%","Barium - 0.3%"],   
+                imageUrl: "GalaxyJ.jpg"
+            },
+            {
+                name: "Vivo V25 5G",
+                brand: "Vivo",
+                model: "V series",
+                minerals: ["Gold - 15%"],
+                imageUrl: "VivoV25.jpg"
+            },
+            {
+                name: "Realme 10",
+                brand: "Realme",
+                model: "Model 10",
+                minerals: ["Gold - 20%"],
+                imageUrl: "Realme10.jpg"
+            },
+            {
+                name: "Another Device",
+                brand: "Brand",
+                model: "Model",
+                minerals: ["Gold - 30%"],
+                imageUrl: "AnotherDevice.jpg"
+            }
+            // Add more devices as needed
+        ];
+
+        // Populate the select dropdown with device names
+        var deviceSelect = document.getElementById("device-select");
+        phones.forEach(function (device, index) {
+            var option = document.createElement("option");
+            option.value = index;
+            option.text = device.name;
+            deviceSelect.appendChild(option);
+        });
+
+        // Function to display device details when selected
+        function displayDeviceDetails() {
+            var selectedIndex = deviceSelect.value;
+
+            if (selectedIndex !== "") {
+                var selectedDevice = phones[selectedIndex];
+
+                document.getElementById("device-name").textContent = selectedDevice.name;
+                document.getElementById("device-brand").textContent = selectedDevice.brand;
+                document.getElementById("device-model").textContent = selectedDevice.model;
+                document.getElementById("device-minerals").textContent = selectedDevice.minerals.join(", "); // Join minerals as a string
+                document.querySelector("#device-image img").src = selectedDevice.imageUrl;
+                document.getElementById("device-details").style.display = "block";
+            } else {
+                document.getElementById("device-details").style.display = "none";
+            }
+        }
+
+        // Listen for changes in the select dropdown
+        deviceSelect.addEventListener("change", displayDeviceDetails);
+    </script>
+</body>
+</html>

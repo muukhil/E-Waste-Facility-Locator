@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        /* Your existing CSS styles go here */
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <!-- Your navigation links go here -->
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Our E-Waste Awareness Page</h1>
+        <!-- Your existing content goes here -->
+
+        <!-- Image slideshow container -->
+        <div class="slideshow-container">
+            <!-- Slides -->
+            <div class="mySlides">
+                <img src="image1.jpg" alt="Slide 1">
+            </div>
+
+            <div class="mySlides">
+                <img src="image2.jpg" alt="Slide 2">
+            </div>
+
+            <div class="mySlides">
+                <img src="image3.jpg" alt="Slide 3">
+            </div>
+        </div>
+
+        <!-- JavaScript for image slideshow -->
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let slides = document.getElementsByClassName("mySlides");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

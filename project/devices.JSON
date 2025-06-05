@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Device 1",
+        "brand": "Brand A",
+        "model": "Model X",
+        "imageUrl": "device1.jpg"
+    },
+    {
+        "name": "Device 2",
+        "brand": "Brand B",
+        "model": "Model Y",
+        "imageUrl": "device2.jpg"
+    },
+    {
+        "name": "Device 3",
+        "brand": "Brand C",
+        "model": "Model Z",
+        "imageUrl": "device3.jpg"
+    },
+    {
+        "name": "Device 4",
+        "brand": "Brand D",
+        "model": "Model W",
+        "imageUrl": "device4.jpg"
+    }
+    // Add more devices as needed
+]
